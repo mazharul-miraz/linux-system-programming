@@ -1,0 +1,27 @@
+Answer : 3
+
+#include <stdio.h>
+#include<pthread.h>
+#include <unistd.h>
+
+
+void *function1(int val){
+    printf("Thread1 value recieved at  end is :%d\n",val);
+}
+void *function2(int val2){
+    printf("Thread2 value recieved at  end is :%d\n",val2);
+}
+
+int main()
+
+
+{
+    pthread_t pthread1,pthread2;
+    pthread_create(&pthread1,NULL,&function1,15);
+    pthread_create(&pthread2,NULL,&function2,14);
+    pthread_join(pthread1,NULL);
+    pthread_join(pthread2,NULL);
+
+    printf("Main Thread.");
+    return 0;
+}
