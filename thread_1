@@ -1,0 +1,25 @@
+Answer: 2
+
+#include<stdio.h>
+#include<pthread.h>
+#include<unistd.h>
+
+
+void *fun1(){
+
+int sum = 0; //
+int i;
+for(i=1;i<=10;i++);
+	sum = sum +1;
+    i++;
+
+
+ int main(){
+ 
+pthread_t thread1;
+pthread_create(&thread1,NULL,&fun1,NULL);
+pthread_join(pthread1,NULL);
+printf("sum is %d \n",i);
+
+
+ }
